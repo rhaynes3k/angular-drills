@@ -1,6 +1,17 @@
-<html>
-	<body>
+<html ng-app='filList'>
+	<body ng-controller='myCtrl'>
 		Something
+		{{test}}
+
+		<div>
+			Filter Name: <input ng-model='dataFilter.name'></input>
+			<br/>
+			Filter Email: <input ng-model='dataFilter.email'></input>
+		</div>
+		<br/>
+		<div ng-repeat='data in myData | filter: dataFilter'>
+			{{data.name}} <br/> {{data.email}}
+		</div>
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
